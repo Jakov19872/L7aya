@@ -421,7 +421,6 @@ section.home {
 /* Image Slider Styles */
 .image-container {
     display: flex;
-    overflow-x: auto;
 }
 
 .image {
@@ -439,7 +438,6 @@ section.home {
   
   .image-container {
     display: flex;
-    justify-content: space-between;
     width: 100%; /* Adjust based on your layout */
   }
   
@@ -453,8 +451,8 @@ section.home {
     transform: scale(1.05); /* Slight zoom effect */
   }
 .image-slider img{
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 .imagess img{
   height: 100%;
@@ -493,7 +491,6 @@ section.home {
 /* Mobile: Vertical layout for screens 768px or smaller */
 
 .image-container {
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
