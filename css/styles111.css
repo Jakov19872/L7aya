@@ -21,7 +21,7 @@ body {
   color:white;
   font-family: 'Moderniz';}
 body{
-  background-image: url(../img/bgdrop.jpg);
+  background-image: url('../img/bgdrop.jpg'); /* Path to your background image */
   background-size: cover; /* Ensures the image covers the whole page */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-attachment: fixed; /* Makes the background image fixed */
@@ -37,19 +37,7 @@ p {
   font-size: 1.1rem;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  align-items: center;
-  padding: 100px;
-  margin-top: 20px;
-}
 
-section.home {
-  flex-direction: row;
-  margin-top: 120px;
-}
 
 /* BUTTON */
 .btn {
@@ -59,20 +47,17 @@ section.home {
   color: #fff;
   text-decoration: none;
   padding: 10px 30px;
-  margin-top: 320px;
   margin: 20px 0;
   border: 0;
 }
 
 .btn:hover {
   transform: scale(0.98);
-  margin-top: 320px;
-
 }
 
 .logo img {
-  position: fixed;
-  top: 30px;
+  position: absolute;
+  
   left: 100px;
   font-size: 2rem;
   font-weight: 700;
@@ -81,7 +66,7 @@ section.home {
 
 /* TOGGLE */
 .toggle {
-  position: fixed;
+  position: absolute;
   top: 70px;
   right: 100px;
   width: 60px;
@@ -103,7 +88,7 @@ section.home {
 
 /* NAVIGATION */
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100%;
   width: 100%;
@@ -131,7 +116,7 @@ section.home {
 
 .navigation ul li a {
   font-size: 2.2rem;
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: 300;
 }
@@ -154,18 +139,16 @@ section.home {
   height: 128px;
   width: 128px;
 }
-
-.email-icon img{
-  height: 100px;
-  width: 100px;
-}
 .navigation .social-bar a {
   display: inline-block;
   transform: scale(0.5);
 }
-
+.email-icon img{
+  height: 100px;
+  width: 100px;
+}
 .navigation .email-icon {
-  position: fixed;
+  position: absolute;
   bottom: 20px;
   transform: scale(0.5);
 }
@@ -178,7 +161,7 @@ section.home {
 }
 
 .home-img {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
   height: 110%;
@@ -233,7 +216,7 @@ section.home {
 }
 
 .portfolio .item .action {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -356,14 +339,10 @@ section.home {
   }
 
   .logo img{
-    top: 10px;
     left: 40px;
     font-size: 1.5rem;
   }
 
-  section {
-    padding: 100px 40px;
-  }
 
   .navigation ul li a {
     font-size: 2rem;
@@ -408,21 +387,20 @@ section.home {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 }
-/* Logo Styling */
-.logo {
-  position: fixed; /* Allows positioning it relative to its container */
-  top: 20px; /* Distance from the top */
-  left: 20px; /* Distance from the left */
-  z-index: 30; /* Ensures the logo is above other elements */
+/* Section containing the button */
+section {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px); /* Adjust height if you have a fixed header */
+  justify-content: flex-end; /* Pushes content to the bottom */
+  align-items: center;
+  padding: 0 20px;
 }
 
-.logo img {
-  width: 120px; /* Adjust the size of the logo */
-  height: auto; /* Maintain aspect ratio */
-}
+/* Button Styling */
 .btn.get-started {
-  margin-top: 320px;
-
+  margin-bottom: 140px;
   background: var(--primary-color);
   color: #fff;
   text-decoration: none;
@@ -437,10 +415,26 @@ section.home {
 .btn.get-started:hover {
   background: darken(var(--primary-color), 10%);
   transform: scale(1.05);
-  margin-top: 320px;
+}
+/* Logo Styling */
+.logo {
+  margin-top: 45px;
+  position: absolute; /* Allows positioning it relative to its container */
+  left: 20px; /* Distance from the left */
+  z-index: 30; /* Ensures the logo is above other elements */
+}
 
+.logo img {
+  width: 120px; /* Adjust the size of the logo */
+  height: auto; /* Maintain aspect ratio */
 }
 @media screen and (max-width: 768px) {
+  body{
+    background-image: url('../img/drop.png'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Makes the background image fixed */
+    background-position: center; }
   .toggle {
     position: absolute;
     top: 50px;
@@ -466,10 +460,4 @@ section.home {
     margin-top: 0px;
     z-index: 20;
   }
-  body{
-    background-image: url(../img/drop.png);
-    background-size: cover; /* Ensures the image covers the whole page */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Makes the background image fixed */
-    background-position: center; }
 }
