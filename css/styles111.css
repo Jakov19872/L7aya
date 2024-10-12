@@ -400,7 +400,7 @@ section {
 
 /* Button Styling */
 .btn.get-started {
-  margin-bottom: 140px;
+  margin-bottom: 160px;
   background: var(--primary-color);
   color: #fff;
   text-decoration: none;
